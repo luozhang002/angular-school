@@ -11,12 +11,18 @@
 		姓：<input type="text" ng-model="lastName"><br>
 
 		姓名：{{firstName+""+lastName}}
+		<ul>
+			<li ng-repeat ="x in newArray">
+				{{x}}
+			</li>
+		</ul>
 	</div>
 <script>
 	var app = angular.module("myApp",[]);
 	app.controller('myCtrl',function($scope){
 		$scope.firstName ="John";
 		$scope.lastName="Doe";
+		$scope.newArray=[2,3,4,5];
 	})
 </script>
 </body>
