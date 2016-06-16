@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>angularjs我的笔记应用</title>
+	<script type="text/javascript" src="angular146.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myNoteController">
+		<h1>我的笔记</h1>
+		<textarea ng-model="textarea"></textarea><br>
+		<input type="button" value="保存" ng-click="save()">
+		<input type="button" ng-click="clearContent()" value="清除">
+		<p>剩余字数：<span ng-bind="contentNum()"></span></p>
+	</div>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller("myNoteController",function($scope){
+			$scope.textarea="111111111111111111";
+			$scope.save = function(){
+				alert("not saved")
+			};
+			$scope.clearContent = function(){
+				$scope.textarea="";
+			};
+			$scope.contentNum  = function(){
+				return 100- $scope.textarea.length;
+			};
+		});
+	</script>
+</body>
+</html>
