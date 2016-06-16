@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angularJs模块应用</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="angular146.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		名：<input type="text" ng-model="firstName"><br>
+		姓：<input type="text" ng-model="lastName"><br>
+
+		姓名：{{firstName+""+lastName}}
+	</div>
+<script>
+	var app = angular.module("myApp",[]);
+	app.controller('myCtrl',function($scope){
+		$scope.firstName ="John";
+		$scope.lastName="Doe";
+	})
+</script>
+</body>
+</html>
